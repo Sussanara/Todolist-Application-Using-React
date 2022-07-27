@@ -1,4 +1,10 @@
-
+body {
+    margin-left: 200px;
+    margin-right: 200px;
+    margin-top: 50px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    background-color: rgb(241, 229, 232);
+}
 /* 
 
     You can write your own styles here...
