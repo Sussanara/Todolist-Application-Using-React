@@ -14,17 +14,17 @@ function Todolist() {
   };
 
   const DeleteTask = (index) => {
-    task.splice(index, 1);
+    task.splice(index,1);
     setTask([...task]);
   };
 
   return (
     <div className="container">
-      <div class="card mt-5">
-        <div class="card-body">
-          <h1 class="card-title text-center">Todos</h1>
-          <ul class="list-group list-group-flush">
-            <div class="input-group mb-3 list-group list-group-flush">
+      <div className="card mt-4">
+        <div className="card-body">
+          <h1 className="card-title text-center">Todos</h1>
+          <ul className="list-group list-group-flush">
+            <div className="input-group mb-2 list-group list-group-flush">
               <input
                 onKeyUp={addTask}
                 ref={(r) => (nombreRef = r)}
@@ -49,7 +49,7 @@ function Todolist() {
               })}
           </ul>
         </div>
-        <div class="card-footer text-muted">
+        <div className="card-footer text-muted">
           Things to do {task.length}
         </div>
       </div>
