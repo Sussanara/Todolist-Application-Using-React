@@ -4,6 +4,7 @@ import ReactDOM from "react-dom";
 
 // include your styles into the webpack bundle
 import "../styles/index.css";
+import Todolist from "./component/home.jsx";
 
 //import your own components
 import Home from "./component/home.jsx";
@@ -13,7 +14,9 @@ ReactDOM.render(<Home />, document.querySelector("#app"));
 
 ReactDOM.render(
     <React.StrictMode>
-      <App />
+      <Home />
     </React.StrictMode>,
     document.getElementById('root')
   );
+
+  reportWebVitals();

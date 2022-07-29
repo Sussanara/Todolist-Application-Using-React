@@ -4,16 +4,16 @@ import { useRef, useState } from "react";
 //create your first component
 function Todolist() {
   let nombreRef = useRef(null);
-  const [task, setTask] = useState([]);
+  const [task, setTask] = useState ([]);
 
-  const addTask = () => {
+  const addTask = (e) => {
     if (e.keyCode === 13 && nombreRef.value !== "") {
       setTask(task.concat(nombreRef.value));
       nombreRef.value = "";
     }
   };
 
-  const DeleteTask = (index) => {
+  const deleteTask = (index) => {
     task.splice(index,1);
     setTask([...task]);
   };
@@ -22,7 +22,7 @@ function Todolist() {
     <div className="container">
       <div className="card mt-4">
         <div className="card-body">
-          <h1 className="card-title text-center">Todos</h1>
+          <h1 className="card-title text-center">To do list <i className="fas fa-tasks"></i></h1> 
           <ul className="list-group list-group-flush">
             <div className="input-group mb-2 list-group list-group-flush">
               <input
@@ -33,7 +33,11 @@ function Todolist() {
                 class="list-group-item"
                 placeholder="What needs to be done?"
               />
+              <div class="input-group-append list-group list-group-flush">
+                    <button onClick={addTask} className="btn btn-outline-danger" type="button" id="button">Add</button>
+                  </div>
             </div>
+
             {!!task.length > 0 &&
               task.map((valor, index) => {
                 return (
@@ -42,7 +46,7 @@ function Todolist() {
                     <i
                       className="fas fa-trash float-right"
                       id="eliminar"
-                      onClick={() => DeleteTask(index)}
+                      onClick={() => deleteTask(index)}
                     ></i>
                   </li>
                 );
