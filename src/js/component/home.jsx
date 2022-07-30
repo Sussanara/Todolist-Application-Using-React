@@ -13,7 +13,7 @@ function Todolist() {
     }
   };
 
-  const deleteTask = (index) => {
+  const deleteTask = (index) =>{
     task.splice(index,1);
     setTask([...task]);
   };
@@ -33,9 +33,6 @@ function Todolist() {
                 class="list-group-item"
                 placeholder="What needs to be done?"
               />
-              <div class="input-group-append list-group list-group-flush">
-                    <button onClick={addTask} className="btn btn-outline-danger" type="button" id="button">Add</button>
-                  </div>
             </div>
 
             {!!task.length > 0 &&
